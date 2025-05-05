@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nguyễn Văn Hải - PHP Developer</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Audio Player -->
+    <div class="audio-player">
+        <audio id="bgMusic" loop autoplay muted>
+            <source src="music/intro.mp3" type="audio/mpeg">
+            Trình duyệt của bạn không hỗ trợ audio.
+        </audio>
+        <button id="musicToggle" class="music-toggle" title="Click để bật/tắt nhạc nền">
+            <i class="fas fa-music"></i>
+        </button>
+        <div class="music-tooltip">Click để nghe nhạc nền</div>
+    </div>
+
+    <header>
+        <nav>
+            <div class="logo">Nguyễn Văn Hải</div>
+            <ul class="nav-links">
+                <li><a href="#home">Trang chủ</a></li>
+                <li><a href="#about">Giới thiệu</a></li>
+                <li><a href="#experience">Kinh nghiệm</a></li>
+                <li><a href="#projects">Dự án</a></li>
+                <li><a href="#contact">Liên hệ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h1>Xin chào, tôi là <span class="highlight">Nguyễn Văn Hải</span></h1>
+                <p>PHP Developer & Fullstack Web Developer</p>
+                <a href="#contact" class="cta-button">Liên hệ với tôi</a>
+            </div>
+        </section>
+
+        <section id="about" class="about">
+            <h2>Về tôi</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Thông tin cá nhân</h3>
+                    <ul>
+                        <li><strong>Ngày sinh:</strong> 25/02/1995</li>
+                        <li><strong>Giới tính:</strong> Nam</li>
+                        <li><strong>Điện thoại:</strong> 0335 909 558</li>
+                        <li><strong>Email:</strong> nvhai002@gmail.com</li>
+                        <li><strong>Địa chỉ:</strong> Hà Nội, Việt Nam</li>
+                    </ul>
+
+                    <h3>Mục tiêu nghề nghiệp</h3>
+                    <p>Muốn trở thành một Fullstack Web Developer, làm việc trong môi trường năng động, thử thách, nơi có thể phát huy kỹ năng, học hỏi công nghệ mới và đóng góp cho sự phát triển của tổ chức.</p>
+
+                    <h3>Kỹ năng</h3>
+                    <ul>
+                        <li><strong>Ngôn ngữ & công nghệ web:</strong> HTML, CSS, JavaScript, jQuery, Bootstrap</li>
+                        <li><strong>Backend:</strong> PHP (Laravel, CakePHP, CodeIgniter, FuelPHP), Python (Django)</li>
+                        <li><strong>Cơ sở dữ liệu:</strong> MySQL, MongoDB, PostgreSQL</li>
+                        <li><strong>Công cụ & môi trường:</strong> Git, Linux/Windows</li>
+                        <li><strong>Phương pháp:</strong> Agile (Kanban, Scrum), unit testing</li>
+                        <li><strong>Kỹ năng cá nhân:</strong> Tự học, giải quyết vấn đề, đọc tài liệu tiếng Anh, ham học công nghệ mới</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience" class="experience">
+            <h2>Kinh nghiệm làm việc</h2>
+            <div class="experience-content">
+                <div class="experience-item">
+                    <h3>Anet</h3>
+                    <p class="period">10/2023 – 03/2024</p>
+                    <p class="position">Web Developer</p>
+                    <p>Bảo trì, nâng cấp và phát triển hệ thống quản lý trường học (Laravel 8, Vue 3).</p>
+                </div>
+
+                <div class="experience-item">
+                    <h3>Benjamin Cloud Migration</h3>
+                    <p class="period">10/2022 – 10/2023</p>
+                    <p class="position">Web Developer</p>
+                    <p>Chuyển đổi hệ thống quản lý nhập hàng từ VB6 sang Python/Django.</p>
+                </div>
+
+                <div class="experience-item">
+                    <h3>Miichisoft JSC</h3>
+                    <p class="period">03/2020 – 02/2022</p>
+                    <p class="position">Middle Developer</p>
+                    <p>Công ty outsourcing với mindset về sản phẩm, văn hoá phẳng, chia sẻ.</p>
+                </div>
+
+                <div class="experience-item">
+                    <h3>NTQ Solutions JSC</h3>
+                    <p class="period">05/2018 – 09/2022</p>
+                    <p class="position">Junior Developer → Middle Developer</p>
+                    <p>Làm việc với khách hàng Nhật, áp dụng các phương pháp Agile, Kanban, Scrum, Horenso.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="projects">
+            <h2>Dự án tiêu biểu</h2>
+            <div class="project-grid">
+                <div class="project-card">
+                    <h3>Offerbox</h3>
+                    <p class="period">03/2022 – 10/2022</p>
+                    <p>Nền tảng tuyển dụng trực tiếp. Migrate từ FuelPHP sang Laravel 6.</p>
+                </div>
+
+                <div class="project-card">
+                    <h3>RFID Zaiko</h3>
+                    <p class="period">08/2021 – 01/2022</p>
+                    <p>Quản lý kho hàng qua RFID. Laravel 8, API.</p>
+                </div>
+
+                <div class="project-card">
+                    <h3>Web YouTube Tool</h3>
+                    <p class="period">05/2021 – 08/2021</p>
+                    <p>Công cụ chuyển video YouTube sang MIDI. Laravel 8.</p>
+                </div>
+
+                <div class="project-card">
+                    <h3>Call Girls Service Provider Management</h3>
+                    <p class="period">07/2020 – 11/2020</p>
+                    <p>Quản lý dịch vụ. Laravel 6, Vue.js.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact">
+            <h2>Liên hệ</h2>
+            <div class="contact-content">
+                <div class="social-links">
+                    <a href="https://www.facebook.com/SonHaiMinions" target="_blank"><i class="fab fa-facebook"></i></a>
+                    <a href="mailto:nvhai002@gmail.com"><i class="fas fa-envelope"></i></a>
+                    <a href="tel:0335909558"><i class="fas fa-phone"></i></a>
+                </div>
+                <form id="contact-form">
+                    <input type="text" placeholder="Tên của bạn" required>
+                    <input type="email" placeholder="Email" required>
+                    <textarea placeholder="Tin nhắn" required></textarea>
+                    <button type="submit">Gửi tin nhắn</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Nguyễn Văn Hải. All rights reserved.</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html> 
