@@ -29,6 +29,43 @@ if (contactForm) {
     });
 }
 
+// Music Player Control
+const musicToggle = document.getElementById('musicToggle');
+const bgMusic = document.getElementById('bgMusic');
+let isPlaying = false;
+
+// Initialize audio on first user interaction
+document.addEventListener('click', function initAudio() {
+    if (bgMusic) {
+        bgMusic.muted = false;
+        bgMusic.play().then(() => {
+            if (musicToggle) {
+                musicToggle.classList.add('playing');
+            }
+            isPlaying = true;
+        }).catch(error => {
+            console.log('Autoplay failed:', error);
+        });
+    }
+    // Remove the event listener after first click
+    document.removeEventListener('click', initAudio);
+}, { once: true });
+
+// Toggle music playback
+if (musicToggle && bgMusic) {
+    musicToggle.addEventListener('click', function() {
+        if (isPlaying) {
+            bgMusic.pause();
+            musicToggle.classList.remove('playing');
+        } else {
+            bgMusic.muted = false;
+            bgMusic.play();
+            musicToggle.classList.add('playing');
+        }
+        isPlaying = !isPlaying;
+    });
+}
+
 // Initialize sections
 document.addEventListener('DOMContentLoaded', function() {
     // Add animate class to all sections except hero
@@ -74,37 +111,4 @@ document.querySelectorAll('.project-card').forEach(card => {
     card.addEventListener('mouseleave', function() {
         this.style.transform = 'translateY(0)';
     });
-});
-
-// Music Player Control
-const musicToggle = document.getElementById('musicToggle');
-const bgMusic = document.getElementById('bgMusic');
-let isPlaying = false;
-
-// Try to autoplay when page loads
-document.addEventListener('DOMContentLoaded', function() {
-    // Try to play with user interaction
-    document.body.addEventListener('click', function initAudio() {
-        bgMusic.muted = false;
-        bgMusic.play().then(() => {
-            musicToggle.classList.add('playing');
-            isPlaying = true;
-        }).catch(error => {
-            console.log('Autoplay failed:', error);
-        });
-        // Remove the event listener after first click
-        document.body.removeEventListener('click', initAudio);
-    }, { once: true });
-});
-
-musicToggle.addEventListener('click', function() {
-    if (isPlaying) {
-        bgMusic.pause();
-        musicToggle.classList.remove('playing');
-    } else {
-        bgMusic.muted = false;
-        bgMusic.play();
-        musicToggle.classList.add('playing');
-    }
-    isPlaying = !isPlaying;
 });
