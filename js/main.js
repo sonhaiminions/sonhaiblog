@@ -29,19 +29,11 @@ if (contactForm) {
     });
 }
 
-// Initialize sections with opacity 0
+// Initialize sections
 document.addEventListener('DOMContentLoaded', function() {
-    const sections = document.querySelectorAll('section');
-    sections.forEach(section => {
-        // Hiển thị section đầu tiên (hero section) ngay lập tức
-        if (section.id === 'home') {
-            section.style.opacity = '1';
-            section.style.transform = 'translateY(0)';
-        } else {
-            section.style.opacity = '0';
-            section.style.transform = 'translateY(20px)';
-            section.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-        }
+    // Add animate class to all sections except hero
+    document.querySelectorAll('section:not(#home)').forEach(section => {
+        section.classList.add('animate');
     });
 
     // Add parallax effect to hero section
@@ -63,11 +55,12 @@ const observer = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             entry.target.classList.add('visible');
-            observer.unobserve(entry.target);
+            // Không unobserver để có thể animate lại khi scroll lên
         }
     });
 }, observerOptions);
 
+// Observe all sections except hero
 document.querySelectorAll('section:not(#home)').forEach(section => {
     observer.observe(section);
 });

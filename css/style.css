@@ -67,6 +67,7 @@ nav {
     padding: 0 1rem;
     position: relative;
     overflow: hidden;
+    opacity: 1 !important;
 }
 
 .hero::before {
@@ -122,12 +123,17 @@ nav {
 /* Sections */
 section {
     padding: 5rem 1rem;
-    opacity: 0;
-    transform: translateY(20px);
+    opacity: 1;
+    transform: translateY(0);
     transition: all 0.6s ease-out;
 }
 
-section.visible {
+section.animate {
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+section.animate.visible {
     opacity: 1;
     transform: translateY(0);
 }
